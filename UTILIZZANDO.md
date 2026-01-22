@@ -5,11 +5,11 @@ scripts per la gesione degli upload sulla piattaforma scenedaunpatrimonio
 
 Uno script Python per inserire automaticamente coordinate GPS dai file Excel nei metadati EXIF delle immagini.
 
-## 📋 Descrizione
+##  Descrizione
 
 Questo script legge dati di georeferenziazione da un file Excel (.xlsx) e li inserisce automaticamente nei metadati EXIF delle immagini corrispondenti. Ideale per archivi fotografici, cataloghi museali, collezioni digitali.
 
-## 🎯 Caso d'Uso
+##  Caso d'Uso
 
 Hai una cartella con immagini e un file Excel che contiene:
 - **Nomi dei file** (con o senza estensione)
@@ -18,7 +18,7 @@ Hai una cartella con immagini e un file Excel che contiene:
 
 Lo script associa automaticamente le coordinate alle immagini e le scrive nei metadati EXIF.
 
-## 📁 Struttura dei Dati
+##  Struttura dei Dati
 
 ### File Excel (.xlsx)
 Deve contenere almeno queste colonne:
@@ -38,7 +38,7 @@ AS_Sapienza_FototecaPACU_FotoGiacomelli_1935_CittàUniversitaria_Ingresso princi
 AS_Sapienza_Fototeca Cerimoniale_De Filippo_5.jpg
 ```
 
-## 🚀 Installazione
+##  Installazione
 
 ### Prerequisiti
 - Python 3.6 o superiore
@@ -86,7 +86,7 @@ py -3 -m pip install piexif pillow pandas openpyxl
 python3 -c "import piexif, PIL, pandas; print('Tutte le dipendenze installate correttamente')"
 ```
 
-## 📖 Utilizzo
+##  Utilizzo
 
 ### 1. Preparazione
 1. Assicurati che il file Excel sia in formato `.xlsx`
@@ -134,7 +134,7 @@ Percorso della cartella immagini: /Users/tuo_nome/Downloads/immagini
 Procedere? (s/n): s
 ```
 
-## 🔧 Configurazione Avanzata
+##  Configurazione Avanzata
 
 ### Percorsi Predefiniti
 Modifica queste variabili nello script per uso ripetuto:
@@ -153,7 +153,7 @@ Lo script riconosce questi formati:
 - `-41.902158, -12.512064` (coordinate negative)
 - `N41.902158, E12.512064`
 
-## ✅ Verifica dei Risultati
+##  Verifica dei Risultati
 
 ### Terminale (macOS/Linux)
 ```bash
@@ -186,7 +186,7 @@ exiftool -GPS* nomefile.jpg
 python3 verify_metadata.py nomefile.jpg
 ```
 
-## 🐛 Risoluzione Problemi
+##  Risoluzione Problemi
 
 ### "ModuleNotFoundError: No module named 'pandas'"
 **Soluzione:**
@@ -216,7 +216,7 @@ DEBUG = True  # Mostra ricerca file
 2. Separatore: virgola, non punto e virgola
 3. Tipo: devono essere numeri decimali validi
 
-## 📊 Output e Log
+##  Output e Log
 
 Lo script genera un log dettagliato:
 ```
@@ -241,7 +241,7 @@ Errori: 1
 ============================================================
 ```
 
-## 🔄 Utilizzo Avanzato
+##  Utilizzo Avanzato
 
 ### Batch Processing
 Crea uno script batch per processare più cartelle:
@@ -266,14 +266,14 @@ exif_dict["0th"][piexif.ImageIFD.DateTime] = data_scatto.encode('utf-8')
 exif_dict["0th"][piexif.ImageIFD.Artist] = autore.encode('utf-8')
 ```
 
-## ⚠️ Avvertenze Importanti
+##  Avvertenze Importanti
 
 1. **Backup**: Sempre fare backup delle immagini originali
 2. **Test**: Prova con alcune immagini prima di processare l'intera collezione
 3. **Metadati Esistenti**: I dati GPS esistenti verranno sovrascritti
 4. **Formati Supportati**: JPEG, PNG, TIFF (altri formati potrebbero non supportare EXIF)
 
-## 📝 Esempio Completo
+##  Esempio Completo
 
 ### Struttura del Progetto
 ```
@@ -300,7 +300,7 @@ python3 verify_metadata.py immagini/foto_001.jpg
 exiftool immagini/foto_001.jpg | grep GPS
 ```
 
-## 🤝 Contribuire
+##  Contribuire
 
 1. Fork del repository
 2. Crea un branch: `git checkout -b feature/nuova-funzionalita`
@@ -315,22 +315,16 @@ Includi nelle issue:
 3. Esempio di file Excel e nome immagine
 4. Output del comando `python --version`
 
-## 📄 Licenza
+##  Licenza
 
 Questo progetto è rilasciato sotto licenza MIT. Vedi il file [LICENSE](LICENSE) per i dettagli.
 
-## 🙏 Ringraziamenti
+##  Ringraziamenti
 
 - [piexif](https://github.com/hMatoba/piexif) per la gestione EXIF
 - [Pillow](https://python-pillow.org/) per la manipolazione immagini
 - [pandas](https://pandas.pydata.org/) per la lettura Excel
 
-## 📞 Supporto
-
-Per problemi o domande:
-1. Controlla la sezione [Risoluzione Problemi](#-risoluzione-problemi)
-2. Apri una [Issue](https://github.com/tuo-repo/issues)
-3. Consulta il [Wiki](https://github.com/tuo-repo/wiki) per guide dettagliate
 
 ---
 
