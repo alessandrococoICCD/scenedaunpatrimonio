@@ -1,4 +1,5 @@
 #PER LE ISTRUZIONI LEGGI UTILIZZANDO.md
+#https://github.com/alessandrococoICCD/scenedaunpatrimonio/blob/34060c619e74d021367b843b5d415a5a2b63c77e/UTILIZZANDO.md
 #!/usr/bin/env python3
 import os
 import sys
